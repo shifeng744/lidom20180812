@@ -1,0 +1,5 @@
+.sprite-img{background-image: url(../ossweb-img/sprite-img.png); background-size:221px 108px;background-repeat: no-repeat}
+@mixin arrow_left{@extend .sprite-img; background-position:0px 0px; width:108px; height:108px;}
+.arrow_left{@extend .sprite-img; background-position:0px 0px; width:108px; height:108px;}
+@mixin arrow_right{@extend .sprite-img; background-position:-113px 0px; width:108px; height:108px;}
+.arrow_right{@extend .sprite-img; background-position:-113px 0px; width:108px; height:108px;}

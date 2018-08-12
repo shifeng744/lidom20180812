@@ -1,0 +1,147 @@
+@mixin cf($color,$fontSize) {
+  color: $color;
+  font-size: $fontSize;
+}
+
+@mixin border-gradient($width, $direction, $fromColor, $toColor) {
+  border: $width+px solid $fromColor;
+  border-image: -webkit-linear-gradient($direction, $fromColor, $toColor) $width $width;
+  border-image: -moz-linear-gradient($direction, $fromColor, $toColor) $width $width;
+  border-image: linear-gradient($direction, $fromColor, $toColor) $width $width;
+}
+
+//不传参数/参数1 = 单行溢出隐藏并使用...代替
+//参数>1 = N（根据参数来）行溢出隐藏并使用...代替
+@mixin text-line-ellipsis($lineCount:1) {
+  @if $lineCount == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineCount;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@mixin text-shadowed-stock($w,$color) {
+  text-shadow: $w 0 0 $color,
+               (-$w) 0 0 $color,
+               0 $w 0 $color,
+               0 (-$w) 0 $color;
+}
+
+@mixin absolute-center-transform() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+@mixin text-vertical-gradient($fromColor, $toColor) {
+  background-image: -webkit-gradient(linear, 0 0, 0 bottom, from($fromColor), to($toColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin text-horizontal-gradient($fromColor, $toColor) {
+  background-image: -webkit-gradient(linear, left 0, right 0, from($fromColor), to($toColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin background($url,$sizeW,$sizeH) {
+  background: url("../../img/#{$url}") no-repeat center/$sizeW $sizeH;
+}
+
+@mixin animation($p) {
+  animation: $p;
+  -webkit-animation: $p;
+}
+
+@mixin animation-delay($p) {
+  animation-delay: $p;
+  -webkit-animation-delay: $p;
+}
+
+@mixin transform($type) {
+  -webkit-transform: $type;
+  -ms-transform: $type;
+  -o-transform: $type;
+  transform: $type;
+}
+
+@mixin transform-origin($type) {
+  -webkit-transform-origin: $type;
+  -ms-transform-origin: $type;
+  -o-transform-origin: $type;
+  transform-origin: $type;
+}
+
+@mixin blurFilter($num) {
+  -webkit-filter: blur($num+px);
+  -moz-filter: blur($num+px);
+  -ms-filter: blur($num+px);
+  filter: blur($num+px);
+  //filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$num, MakeShadow=false);
+}
+
+@mixin transition($p) {
+  -webkit-transition: $p;
+  -moz-transition: $p;
+  -o-transition: $p;
+  transition: $p;
+}
+
+@mixin absolute-x-center($w) {
+  position: absolute;
+  left: 50%;
+  margin-left: -$w/2;
+}
+
+@mixin absolute-center($w, $h) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: (-$h/2) 0 0 (-$w/2);
+}
+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin border-radius($p) {
+  border-radius: $p;
+  -webkit-border-radius: $p;
+  -moz-border-radius: $p;
+}
+
+@mixin linear-gradient($direction, $sColor, $eColor) {
+  background: -webkit-linear-gradient($direction, $sColor , $eColor); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient($direction, $sColor, $eColor); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($direction, $sColor, $eColor); /* Firefox 3.6 - 15 */
+  background: linear-gradient($direction, $sColor , $eColor); /* 标准的语法 */
+}
+
+@mixin btn($w,$h) {
+  display: block;
+  text-align: center;
+  width: $w;
+  height: $h;
+  line-height: $h;
+}
+
+@mixin btn-rounded($w,$h) {
+  display: block;
+  text-align: center;
+  width: $w;
+  height: $h;
+  line-height: $h;
+  border-radius: $h/2;
+}
+
+
