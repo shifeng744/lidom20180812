@@ -60,7 +60,7 @@ dl,ol,ul{list-style:none}
 .projects-list{position:relative;overflow:hidden;white-space:nowrap;width:710px;overflow:auto;-webkit-overflow-scrolling:touch;margin-left:40px;text-align:left}
 .projects-list:after{position:absolute;right:0;top:0;content:"";width:1px;background:#000}
 .projects-list a{color:#000;font-weight:700;padding:5px 10px}
-.projects-list a.on,.projects-list a:hover{background:#000;color:#fff}
+.projects-list a.on{background:#000;color:#fff}
 .projects-list li{white-space:nowrap;margin:8px 10px;display:inline}
 .projects-list li:last-child{margin-right:40px}
 .page4{position:relative}
