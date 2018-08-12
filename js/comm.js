@@ -139,22 +139,22 @@ var Marke = {
 			partners_Swiper.slideNext();
 		})
 		$(".n-btn-r").click(function() {
-		news_Swiper.slideNext();
+			news_Swiper.slideNext();
 		})
 		$(".nav-open").click(function(){
 			$(this).hide().siblings(".nav-close").show();		
 			$(".nav-list").fadeIn();
-			$("body").addClass("n-scroll");
+
 		})
 		$(".nav-close").click(function(){
 			$(this).hide().siblings(".nav-open").css("display","inline");		
 			$(".nav-list").fadeOut();
-			$("body").removeClass("n-scroll");
+
 		})
 		$(".nav-list li").click(function(){
 			$(".nav-close").hide().siblings(".nav-open").css("display","inline");					
 			$(".nav-list").fadeOut();
-			$("body").removeClass("n-scroll");
+
 		})
 		Marke.swiperTo(".nav-list li", g_Swiper);		
 		Marke.swiperTo(".logo", g_Swiper);
@@ -163,9 +163,9 @@ var Marke = {
 		$(class_name).click(function() {
 			var index = $(this).index();
 			$(this).addClass("on").siblings().removeClass("on");
-			swiper_name.slideTo(index)
-			$(".m-container").removeClass("animaiton");
-			$(".m-container").eq(index).addClass("animaiton");
+			swiper_name.slideTo(index);
+//			$(".m-container").removeClass("animaiton");
+//			$(".m-container").eq(index).addClass("animaiton");
 			if(class_name==".logo"){
 				$(".nav-list li").eq(0).addClass("on").siblings().removeClass("on");
 			}
